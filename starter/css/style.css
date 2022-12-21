@@ -1,0 +1,285 @@
+:root {
+  --hoverBG: darkslateblue;
+  --hoverColor: ghostwhite;
+  --gradientMain: rgba(4, 58, 81, 0.612);
+  --gradientSecondary: rgba(66, 32, 77, 0.638);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+header {
+  padding: 20px;
+  
+}
+
+
+.navBar {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+  /*display: flex;
+  justify-content: flex-end;
+  align-items: center;*/
+
+h1 {
+  display: inline-block;
+  position: static; 
+  padding: 20px;
+}
+
+
+.navBar a {
+  padding: 2px;
+  margin: 5px;
+  border-left: 1px solid rgba(0,0,0,0.5);
+}
+
+.navBar a:hover {
+  background-color: var(--hoverBG);
+  color: var(--hoverColor);
+}
+
+#about { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.page-section h2 {
+  height: fit-content;
+  width: 600px;
+  margin: 0px;
+  margin-right: 0px;
+  padding: 20px; 
+  text-align: justify;
+}
+
+.page-section a:hover {
+  background-color: var(--hoverBG);
+  filter: grayscale(100%);
+  color: var(--hoverColor);
+}
+p {
+  margin-left: 0px;
+  margin-right: 50px;
+  padding: 20px; 
+  text-align: justify;
+}
+
+.hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0px;
+  padding: 100px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("../images/02-hero-bg.jpg");
+}
+
+.hero-banner h2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: ghostwhite;
+}
+
+#work {
+  margin: 0px 5%;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-rows: 150px 150px 150px 150px 150px 150px;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-areas:
+  "title job1 job1"
+  "title job1 job1"
+  "title job1 job1"
+  "title job1 job1"
+  "title job2 job3"
+  "title job4 job5";
+}
+
+#title {
+  grid-area: title;
+}
+
+#job1 {
+  grid-area: job1;
+  background: url("../images/02-portfolio-4.jpg") no-repeat center center / cover;
+  
+  
+}
+
+#job2 {
+  grid-area: job2;
+  background: url("../images/02-portfolio-1.jpg") no-repeat center center / cover;
+}
+
+#job3 {
+  grid-area: job3;
+  background: url("../images/02-portfolio-2.jpg") no-repeat center center / cover;
+}
+
+#job4 {
+  grid-area: job4;
+  background: url("../images/02-portfolio-3.jpg") no-repeat center center / cover;
+}
+
+#job5 {
+  grid-area: job5;
+  background: url("../images/02-run-buddy.jpg") no-repeat center center / cover;
+}
+
+[id^="job"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  border: 5px solid white;
+}
+
+#contact {
+  margin: 0px 5%;
+  margin-left: 0;
+  padding-bottom: 100px;
+  padding-left: 0;
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "contact0 contact1 contact2 contact4 contact3";
+}
+
+
+#idcontact0 {
+  display: flex;
+  align-items: baseline;
+  grid-area: contact0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+  
+
+
+#idcontact1 {
+  grid-area: contact1;
+}
+
+#idcontact2 {
+  grid-area: contact2;
+}
+
+#idcontact3 {
+  grid-area: contact3;
+}
+
+#idcontact4 {
+  grid-area: contact4;
+}
+
+[id^="idcontact"] {
+  
+  height: fit-content;
+  width: fit-content;
+  /*border: 10px solid;**/
+}
+
+.headings {
+  width: 600px;
+  font-size: 1.25em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  
+}
+
+.vl {
+  border-left: 4px solid rgb(35, 30, 52);
+  height: 1200px;
+  position: absolute;
+  left: 12%;
+  margin-left: -3px;
+  top: 400px;
+}
+
+@media screen and (max-width: 600px) {
+  .navBar a {
+    float: none;
+    display: block;
+    width: 100%;
+  }
+  #work {
+    margin: 0px 5%;
+    display: grid;
+    align-content: center;
+    grid-template-rows: 150px 150px 150px 150px 150px 150px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "title title"
+    "job1 job1"
+    "job2 job2"
+    "job3 job3"
+    "job4 job4"
+    "job5 job5";
+  }
+
+  #title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  #contact {
+    margin: 0px 5%;
+    padding-bottom: 100px;
+    display: grid;
+    align-content: center;
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "contact0" 
+    "contact1"
+    "contact2" 
+    "contact3" 
+    "contact4";
+  }
+  .vl {
+    border-left: 0px solid rgb(35, 30, 52);
+    height: 1200px;
+    position: absolute;
+    left: 12%;
+    margin-left: -3px;
+    top: 400px;
+  }
+  #about { 
+    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+  }
+}
